@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Book Management</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 30px;
+    }
+    .form-box {
+      background: white;
+      padding: 20px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .form-box h2 {
+      margin-bottom: 15px;
+      text-align: center;
+      color: #2c3e50;
+    }
+    .form-box label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .form-box input,
+    .form-box select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-box button {
+      width: 100%;
+      padding: 10px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-box button:hover {
+      background: #1a242f;
+    }
+    .message {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Library Book Management</h1>
+    <nav>
+      <a href="#login">Login</a>
+      <a href="#submit">Book Submission</a>
+      <a href="#borrow">Borrow Book</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Login Section -->
+    <section id="login" class="form-box">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Password:</label>
+        <input type="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginMsg" class="message"></p>
+    </section>
+
+    <!-- Book Submission Section -->
+    <section id="submit" class="form-box">
+      <h2>Book Submission</h2>
+      <form id="submitForm">
+        <label>Book Title:</label>
+        <input type="text" placeholder="Enter book title" required>
+
+        <label>Author:</label>
+        <input type="text" placeholder="Enter author" required>
+
+        <label>Category:</label>
+        <input type="text" placeholder="e.g. Fiction, Science" required>
+
+        <button type="submit">Submit Book</button>
+      </form>
+      <p id="submitMsg" class="message"></p>
+    </section>
+
+    <!-- Borrow Book Section -->
+    <section id="borrow" class="form-box">
+      <h2>Borrow a Book</h2>
+      <form id="borrowForm">
+        <label>Book Title:</label>
+        <input type="text" placeholder="Enter book title" required>
+
+        <label>Your Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Borrow Date:</label>
+        <input type="date" required>
+
+        <label>Return Date:</label>
+        <input type="date" required>
+
+        <label>Time of Borrowing:</label>
+        <input type="time" required>
+
+        <button type="submit">Confirm Borrow</button>
+      </form>
+      <p id="borrowMsg" class="message"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Library System</p>
+  </footer>
+
+  <!-- JavaScript for Success Messages -->
+  <script>
+    // Login Form
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("loginMsg").innerText = "✅ Login Successful!";
+    });
+
+    // Book Submission Form
+    document.getElementById("submitForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("submitMsg").innerText = "✅ Book Submitted Successfully!";
+    });
+
+    // Borrow Form
+    document.getElementById("borrowForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("borrowMsg").innerText = "✅ Book Borrowed Successfully!";
+    });
+  </script>
+</body>
+</html>
